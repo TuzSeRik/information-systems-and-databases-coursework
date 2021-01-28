@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:2345/coursework
+    username: postgres
+    password: bgi855
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  data:
+    rest:
+      base-path: /api
