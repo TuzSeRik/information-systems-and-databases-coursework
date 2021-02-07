@@ -5,7 +5,7 @@
 
     <groupId>dev.tuzserik</groupId>
     <artifactId>backend</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>backend</name>
     <description>Backend for the Information Systems and Databases coursework.</description>
 
@@ -16,7 +16,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.2</version>
-        <relativePath/>
+        <relativePath />
     </parent>
 
     <dependencies>
