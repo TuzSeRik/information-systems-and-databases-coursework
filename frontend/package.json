@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Frontend for the Information Systems and Databases coursework.",
   "keywords": [],
   "homepage": "",
@@ -52,8 +52,7 @@
     "react-redux": "latest",
     "@reduxjs/toolkit": "latest",
     "bootstrap": "latest",
-    "react-bootstrap": "latest",
-    "react-google-button": "latest"
+    "react-bootstrap": "latest"
   },
   "engines": {
     "node": ">=14.4.0"
