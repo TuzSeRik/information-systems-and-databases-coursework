@@ -2,13 +2,11 @@ package dev.tuzserik.backend.services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.UUID;
-import java.util.List;
-import java.util.stream.Collectors;
 import dev.tuzserik.backend.repositories.InvitationCodeRepository;
 import dev.tuzserik.backend.model.InvitationCode;
-import dev.tuzserik.backend.model.User;
-import dev.tuzserik.backend.model.Role;
 
 @AllArgsConstructor @Service
 public class InvitationCodeService {
@@ -25,25 +23,21 @@ public class InvitationCodeService {
             return "CLIENT";
     }
 
-    public String getUserLevel(User user) {
-        List<String> rolesString = user.getRoles().stream().map(Role::getName).collect(Collectors.toList());
+    public Collection<InvitationCode> getCodes() {
+        return invitationCodeRepository.findAll();
+    }
 
-        if (rolesString.contains("ROLE_ADMINISTRATOR")) {
-            return "ADMINISTRATOR";
+    public Collection<InvitationCode> generateCodes(String type, int number) {
+        ArrayList<InvitationCode> list = new ArrayList<>();
+
+        for (int i = 0; i < number; i++) {
+            list.add(new InvitationCode(
+                    new UUID(0, 0),
+                    UUID.randomUUID(),
+                    type));
         }
 
-        if (rolesString.contains("ROLE_MANAGER")) {
-            return "MANAGER";
-        }
-
-        if (rolesString.contains("ROLE_ISSUER")) {
-            return "ISSUER";
-        }
-
-        if (rolesString.contains("ROLE_CLIENT")) {
-            return "CLIENT";
-        }
-
-        return null;
+        invitationCodeRepository.saveAll(list);
+        return list;
     }
 }

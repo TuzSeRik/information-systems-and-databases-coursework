@@ -6,7 +6,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import dev.tuzserik.backend.services.AuthorisationService;
-import dev.tuzserik.backend.services.InvitationCodeService;
+import dev.tuzserik.backend.services.AccessService;
 import dev.tuzserik.backend.model.*;
 import dev.tuzserik.backend.responses.*;
 
@@ -14,7 +14,7 @@ import dev.tuzserik.backend.responses.*;
 @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class AuthorisationController {
     private final AuthorisationService authorisationService;
-    private final InvitationCodeService invitationCodeService;
+    private final AccessService accessService;
 
     @GetMapping("/api/user")
     ResponseEntity<UserInformationResponse> getUser() {
@@ -23,7 +23,7 @@ public class AuthorisationController {
 
         if (user != null) {
             return new ResponseEntity<>(new UserInformationResponse(
-                    user.getLogin(), invitationCodeService.getUserLevel(user)),
+                    user.getLogin(), accessService.getUserLevel(user)),
                     HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
