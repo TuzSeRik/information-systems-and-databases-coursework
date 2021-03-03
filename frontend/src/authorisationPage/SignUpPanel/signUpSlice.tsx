@@ -31,7 +31,7 @@ export const register = (payload: boolean) => (dispatch: Dispatch) => {
 export const registerUser =
     (payload: {login: string, password: string, invitationCode: string}) =>
         async (dispatch: Dispatch) => {
-            const response = await fetch('http://localhost:8080/register/user', {
+            const response = await fetch('http://localhost:8080/api/register/user', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -51,7 +51,7 @@ export const registerUser =
 export const registerClient =
     (authData: string, payload: {givenName: string, familyName: string, picLink: string}) =>
         async (dispatch: Dispatch) => {
-            const response = await fetch('http://localhost:8080/register/client', {
+            const response = await fetch('http://localhost:8080/api/register/client', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Basic ' + authData
@@ -68,7 +68,7 @@ export const registerIssuer =
     (authData: string, payload:
          {givenName: string, nickname: string, familyName: string, famousFor: string, picLink: string}) =>
         async (dispatch: Dispatch) => {
-            const response = await fetch('http://localhost:8080/register/issuer', {
+            const response = await fetch('http://localhost:8080/api/register/issuer', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Basic ' + authData
@@ -84,7 +84,7 @@ export const registerIssuer =
 export const registerManager =
     (authData: string, payload: { name: string, picLink: string}) =>
         async (dispatch: Dispatch) => {
-            const response = await fetch('http://localhost:8080/register/manager', {
+            const response = await fetch('http://localhost:8080/api/register/manager', {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Basic ' + authData
