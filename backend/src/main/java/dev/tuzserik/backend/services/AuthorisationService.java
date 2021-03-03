@@ -3,8 +3,6 @@ package dev.tuzserik.backend.services;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.stream.Collectors;
-import java.util.List;
 import dev.tuzserik.backend.repositories.*;
 import dev.tuzserik.backend.model.*;
 
@@ -18,28 +16,6 @@ public class AuthorisationService {
 
     public User findUserByLogin(String login) {
         return userRepository.findUserByLogin(login);
-    }
-
-    public String getUserLevel(User user) {
-        List<String> rolesString = user.getRoles().stream().map(Role::getName).collect(Collectors.toList());
-
-        if (rolesString.contains("ROLE_ADMINISTRATOR")) {
-            return "ADMINISTRATOR";
-        }
-
-        if (rolesString.contains("ROLE_MANAGER")) {
-            return "MANAGER";
-        }
-
-        if (rolesString.contains("ROLE_ISSUER")) {
-            return "ISSUER";
-        }
-
-        if (rolesString.contains("ROLE_CLIENT")) {
-            return "CLIENT";
-        }
-
-        return null;
     }
 
     public ClientProfile findClientByUser(User user) {
