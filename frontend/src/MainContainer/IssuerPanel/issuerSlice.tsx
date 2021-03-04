@@ -79,6 +79,7 @@ export const addCardArchetype = (authData: string, archetype: {name: string, iss
     const response = await fetch('http://localhost:8080/api/archetype', {
         method: 'POST',
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': 'Basic ' + authData
         },
         credentials: "include",
@@ -94,6 +95,7 @@ export const addService = (authData: string, service: {archetypeId: string, name
     const response = await fetch('http://localhost:8080/api/service', {
         method: 'POST',
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': 'Basic ' + authData
         },
         credentials: "include",
@@ -109,6 +111,7 @@ export const addCard = (authData: string, card: {cardArchetypeId: string,
     const response = await fetch('http://localhost:8080/api/card', {
         method: 'POST',
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': 'Basic ' + authData
         },
         credentials: "include",
@@ -124,6 +127,7 @@ export const transferCard = (authData: string, transfer: {cardId: string, ownerI
     const response = await fetch('http://localhost:8080/api/card/transfer', {
         method: 'POST',
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': 'Basic ' + authData
         },
         credentials: "include",
