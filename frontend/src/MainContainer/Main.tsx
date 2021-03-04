@@ -1,13 +1,13 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {Col, Container, Row} from 'react-bootstrap';
-import {Client} from '../ClientPanel/Client';
-import {Issuer} from '../IssuerPanel/Issuer';
-import {Manager} from '../ManagerPanel/Manager';
-import {Administrator} from '../AdministratorPanel/Administrator';
+import {Client} from './ClientPanel/Client';
+import {Issuer} from './IssuerPanel/Issuer';
+import {Manager} from './ManagerPanel/Manager';
+import {Administrator} from './AdministratorPanel/Administrator';
 import {load} from "./mainSlice";
-import {ProfileType} from "../../authorisationPage/AuthorisationContainer/authorisationSlice";
-import {StoreType} from "../../AppContainer/store";
+import {ProfileType} from "../AuthorisationContainer/authorisationSlice";
+import {StoreType} from "../AppContainer/store";
 import './Main.css';
 
 export function Main() {

@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {Container, Row, Col, Button} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {addCodes, loadCodes} from "./administratorSlice";
-import {Code} from "../CodeBlock/Code";
+import {Code} from "./CodeBlock/Code";
 import {StoreType} from "../../AppContainer/store";
 import "./Administrator.css";
 

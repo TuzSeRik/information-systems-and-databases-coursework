@@ -1,9 +1,9 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Container, Row, Col, Button, Form} from 'react-bootstrap';
-import {registerUser} from "../SignUpPanel/signUpSlice";
+import {registerUser} from "../signUpSlice";
 import {editLogin, editPassword, editInvitationCode} from "./userSignUpSlice";
-import {StoreType} from '../../AppContainer/store';
+import {StoreType} from '../../../AppContainer/store';
 import './UserSignUp.css';
 
 export function UserSignUp() {

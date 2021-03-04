@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {Container, Row, Col, Button, Form} from 'react-bootstrap';
 import {editLogin, editPassword} from "./signInSlice";
-import {auth} from '../AuthorisationContainer/authorisationSlice';
+import {auth} from '../authorisationSlice';
 import {register} from '../SignUpPanel/signUpSlice';
 import {StoreType} from '../../AppContainer/store';
 import './SignIn.css';

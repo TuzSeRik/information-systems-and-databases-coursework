@@ -1,12 +1,12 @@
 import React from "react";
 import {Container, Row, Col, Button} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
-import {updateTransaction} from "../ManagerPanel/managerSlice";
-import {StoreType} from "../../AppContainer/store";
-import './Transaction.css';
+import {updateContract} from "../managerSlice";
+import {StoreType} from "../../../AppContainer/store";
+import './Contract.css';
 
-export function Transaction(args: {id: string, cardName: string, previousOwnerLogin: string,
-                                    currentOwnerLogin: string, timestamp: string, status: string}) {
+export function Contract(args: {id: string, serviceName: string, receiverLogin: string,
+                                cardName: string, status: string}) {
     const authData = useSelector((state: StoreType) => state.authorisationReducer.authData)
     const dispatch = useDispatch();
 
@@ -14,18 +14,15 @@ export function Transaction(args: {id: string, cardName: string, previousOwnerLo
         <Container>
             <Row>
                 <Col>
-                    <span>Card name: {args.cardName}</span>
+                    <span>Service name: {args.serviceName}</span>
                 </Col>
                 <Col>
-                    <span>Current owner login: {args.currentOwnerLogin}</span>
-                </Col>
-                <Col>
-                    <span>Previous owner login: {args.previousOwnerLogin}</span>
+                    <span>Receiver Login: {args.receiverLogin}</span>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <span>Timestamp: {args.timestamp}</span>
+                    <span>Card name: {args.cardName}</span>
                 </Col>
                 <Col>
                     <span>Status: {args.status}</span>
@@ -34,14 +31,14 @@ export function Transaction(args: {id: string, cardName: string, previousOwnerLo
             <Row>
                 <Col>
                     <Button onClick={() =>
-                        dispatch(updateTransaction(authData, args.id, "CANCELED"))
+                        dispatch(updateContract(authData, args.id, "CANCELED"))
                     }>
                         Cancel contract
                     </Button>
                 </Col>
                 <Col>
                     <Button onClick={() =>
-                        dispatch(updateTransaction(authData, args.id, "CONFIRMED"))
+                        dispatch(updateContract(authData, args.id, "CONFIRMED"))
                     }>
                         Confirm contract
                     </Button>

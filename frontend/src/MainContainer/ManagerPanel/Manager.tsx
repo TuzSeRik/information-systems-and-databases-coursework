@@ -2,8 +2,8 @@ import React, {useEffect} from "react";
 import {Container, Row, Col, Button} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {loadContracts, loadTransactions, switchDisabling} from "./managerSlice";
-import {Contract} from "../ContractBlock/Contract";
-import {Transaction} from "../TransactionBlock/Transaction";
+import {Contract} from "./ContractBlock/Contract";
+import {Transaction} from "./TransactionBlock/Transaction";
 import {StoreType} from "../../AppContainer/store";
 import "./Manager.css";
 

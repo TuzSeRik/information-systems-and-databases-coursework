@@ -2,9 +2,9 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Container, Row, Col, Button, Form} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
-import {registerManager} from "../SignUpPanel/signUpSlice";
+import {registerManager} from "../signUpSlice";
 import {editName, editPicLink} from "./managerSignUpSlice";
-import {StoreType} from '../../AppContainer/store';
+import {StoreType} from '../../../AppContainer/store';
 import './ManagerSignUp.css';
 
 

@@ -1,15 +1,15 @@
 import {combineReducers} from 'redux';
 import {configureStore} from '@reduxjs/toolkit';
-import {authorisationReducer} from "../authorisationPage/AuthorisationContainer/authorisationSlice";
-import {signInReducer} from "../authorisationPage/SignInPanel/signInSlice";
-import {signUpReducer} from "../authorisationPage/SignUpPanel/signUpSlice";
-import {userSignUpReducer} from "../authorisationPage/UserSignUpBlock/userSignUpSlice";
-import {clientSignUpReducer} from "../authorisationPage/ClientSignUpBlock/clientSignUpSlice";
-import {issuerSignUpReducer} from "../authorisationPage/IssuerSignUpBlock/issuerSignUpSlice";
-import {managerSignUpReducer} from "../authorisationPage/ManagerSignUpBlock/managerSignUpSlice";
-import {mainReducer} from "../mainPage/MainContainer/mainSlice";
-import {administratorReducer} from "../mainPage/AdministratorPanel/administratorSlice";
-import {managerReducer} from "../mainPage/ManagerPanel/managerSlice";
+import {authorisationReducer} from "../AuthorisationContainer/authorisationSlice";
+import {signInReducer} from "../AuthorisationContainer/SignInPanel/signInSlice";
+import {signUpReducer} from "../AuthorisationContainer/SignUpPanel/signUpSlice";
+import {userSignUpReducer} from "../AuthorisationContainer/SignUpPanel/UserSignUpBlock/userSignUpSlice";
+import {clientSignUpReducer} from "../AuthorisationContainer/SignUpPanel/ClientSignUpBlock/clientSignUpSlice";
+import {issuerSignUpReducer} from "../AuthorisationContainer/SignUpPanel/IssuerSignUpBlock/issuerSignUpSlice";
+import {managerSignUpReducer} from "../AuthorisationContainer/SignUpPanel/ManagerSignUpBlock/managerSignUpSlice";
+import {mainReducer} from "../MainContainer/mainSlice";
+import {administratorReducer} from "../MainContainer/AdministratorPanel/administratorSlice";
+import {managerReducer} from "../MainContainer/ManagerPanel/managerSlice";
 
 const rootReducer = combineReducers({
     authorisationReducer,

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import {Button} from 'react-bootstrap';
-import {logout} from "../../authorisationPage/AuthorisationContainer/authorisationSlice";
+import {logout} from "../../../AuthorisationContainer/authorisationSlice";
 import './Logout.css';
 
 export function Logout() {

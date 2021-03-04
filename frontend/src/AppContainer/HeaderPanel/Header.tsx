@@ -1,12 +1,12 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {Col, Container, Row} from 'react-bootstrap';
-import {Logout} from '../LogoutBlock/Logout';
-import {ClientProfile} from '../ClientProfileBlock/ClientProfile';
-import {IssuerProfile} from '../IssuerProfileBlock/IssuerProfile';
-import {ManagerProfile} from '../ManagerProfileBlock/ManagerProfile';
-import {ProfileType} from "../../authorisationPage/AuthorisationContainer/authorisationSlice";
-import {StoreType} from '../../AppContainer/store';
+import {Logout} from './LogoutBlock/Logout';
+import {ClientProfile} from './ClientProfileBlock/ClientProfile';
+import {IssuerProfile} from './IssuerProfileBlock/IssuerProfile';
+import {ManagerProfile} from './ManagerProfileBlock/ManagerProfile';
+import {ProfileType} from "../../AuthorisationContainer/authorisationSlice";
+import {StoreType} from '../store';
 import './Header.css';
 
 export function Header() {

@@ -1,5 +1,5 @@
 import {createSlice, Dispatch} from '@reduxjs/toolkit';
-import {ProfileType} from "../../authorisationPage/AuthorisationContainer/authorisationSlice";
+import {ProfileType} from "../AuthorisationContainer/authorisationSlice";
 // Reducers
 const mainSlice = createSlice({
     name: 'main',

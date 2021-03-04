@@ -2,10 +2,10 @@ import React from 'react';
 import {useSelector} from "react-redux";
 import {Container, Row, Col} from 'react-bootstrap';
 import {UserType} from "./signUpSlice";
-import {UserSignUp} from "../UserSignUpBlock/UserSignUp";
-import {ClientSignUp} from "../ClientSignUpBlock/ClientSignUp";
-import {IssuerSignUp} from "../IssuerSignUpBlock/IssuerSignUp";
-import {ManagerSignUp} from "../ManagerSignUpBlock/ManagerSignUp";
+import {UserSignUp} from "./UserSignUpBlock/UserSignUp";
+import {ClientSignUp} from "./ClientSignUpBlock/ClientSignUp";
+import {IssuerSignUp} from "./IssuerSignUpBlock/IssuerSignUp";
+import {ManagerSignUp} from "./ManagerSignUpBlock/ManagerSignUp";
 import {StoreType} from "../../AppContainer/store";
 import './SignUp.css';
 

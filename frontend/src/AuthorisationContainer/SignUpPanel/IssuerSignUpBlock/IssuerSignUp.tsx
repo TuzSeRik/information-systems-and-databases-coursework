@@ -2,14 +2,14 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Container, Row, Col, Button, Form} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
-import {registerClient} from "../SignUpPanel/signUpSlice";
-import {editGivenName, editFamilyName, editPicLink} from "./clientSignUpSlice";
-import {StoreType} from '../../AppContainer/store';
-import './ClientSignUp.css';
+import {registerIssuer} from "../signUpSlice";
+import {editGivenName, editNickname, editFamilyName, editFamousFor, editPicLink} from "./issuerSignUpSlice";
+import {StoreType} from '../../../AppContainer/store';
+import './IssuerSignUp.css';
 
-export function ClientSignUp() {
-    const {givenName, familyName, picLink} =
-        useSelector((state: StoreType) => state.clientSignUpReducer);
+export function IssuerSignUp() {
+    const {givenName, nickname, familyName, famousFor, picLink} =
+        useSelector((state: StoreType) => state.issuerSignUpReducer);
     const {login, password, invitationCode} = useSelector((state: StoreType) => state.userSignUpReducer);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -24,10 +24,18 @@ export function ClientSignUp() {
                             <Form.Control type="text" placeholder="Enter given name"
                                           value={givenName}
                                           onChange={event => dispatch(editGivenName(event.target.value))}/>
+                            <Form.Label>Nickname</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Nickname"
+                                          value={nickname}
+                                          onChange={event => dispatch(editNickname(event.target.value))}/>
                             <Form.Label>Family Name</Form.Label>
                             <Form.Control type="text" placeholder="Enter family name"
                                           value={familyName}
                                           onChange={event => dispatch(editFamilyName(event.target.value))}/>
+                            <Form.Label>Famous For</Form.Label>
+                            <Form.Control type="text" placeholder="Enter What You Famous For"
+                                          value={famousFor}
+                                          onChange={event => dispatch(editFamousFor(event.target.value))}/>
                             <Form.Label>Pic Link</Form.Label>
                             <Form.Control type="text" placeholder="Enter picture link"
                                           value={picLink}
@@ -39,11 +47,11 @@ export function ClientSignUp() {
             <Row>
                 <Col>
                     <Button onClick={() => {
-                        dispatch(registerClient(window.btoa(login + ':' + password),
-                                {givenName, familyName, picLink}));
+                        dispatch(registerIssuer(window.btoa(login + ':' + password),
+                            {givenName, nickname, familyName, famousFor, picLink}));
                         history.push('/');
                     }}>
-                        Create Client Profile
+                        Create Issuer Profile
                     </Button>
                 </Col>
             </Row>
