@@ -10,11 +10,14 @@ import java.util.UUID;
 public class Card {
     @Id @GeneratedValue
     private UUID id;
+    @ManyToOne
+    private CardArchetype cardArchetype;
     private String name;
     @ManyToOne
     private User owner;
+    private int balance;
 
     public void increaseAccountValue(int amount) {
-
+        this.balance += amount;
     }
 }

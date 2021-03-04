@@ -6,12 +6,12 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.UUID;
 
-@AllArgsConstructor @NoArgsConstructor @Data @Entity @Table(name = "SERVICES")
-public class Service {
+@AllArgsConstructor @NoArgsConstructor @Data @Entity @Table(name = "CARD_ARCHETYPES")
+public class CardArchetype {
     @Id @GeneratedValue
     private UUID id;
-    @ManyToOne
-    private CardArchetype cardArchetype;
     private String name;
-    private int price;
+    @ManyToOne
+    private User issuer;
+    private int value;
 }
