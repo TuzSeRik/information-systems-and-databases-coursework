@@ -12,7 +12,7 @@ export function ManagerProfile(profile: {name: string, picLink: string}) {
             </Row>
             <Row>
                 <Col>
-                    <span>{profile.picLink.slice(0, 10)}</span>
+                    <span>{profile.picLink}</span>
                 </Col>
             </Row>
         </Container>

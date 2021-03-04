@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Container, Row, Col, Button, Form} from 'react-bootstrap';
+import {useHistory} from "react-router-dom";
 import {registerIssuer} from "../SignUpPanel/signUpSlice";
 import {editGivenName, editNickname, editFamilyName, editFamousFor, editPicLink} from "./issuerSignUpSlice";
 import {StoreType} from '../../AppContainer/store';
@@ -11,6 +12,7 @@ export function IssuerSignUp() {
         useSelector((state: StoreType) => state.issuerSignUpReducer);
     const {login, password, invitationCode} = useSelector((state: StoreType) => state.userSignUpReducer);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     return (
         <Container>
@@ -47,6 +49,7 @@ export function IssuerSignUp() {
                     <Button onClick={() => {
                         dispatch(registerIssuer(window.btoa(login + ':' + password),
                             {givenName, nickname, familyName, famousFor, picLink}));
+                        history.push('/');
                     }}>
                         Create Issuer Profile
                     </Button>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Container, Row, Col, Button, Form} from 'react-bootstrap';
+import {useHistory} from "react-router-dom";
 import {registerClient} from "../SignUpPanel/signUpSlice";
 import {editGivenName, editFamilyName, editPicLink} from "./clientSignUpSlice";
 import {StoreType} from '../../AppContainer/store';
@@ -11,6 +12,7 @@ export function ClientSignUp() {
         useSelector((state: StoreType) => state.clientSignUpReducer);
     const {login, password, invitationCode} = useSelector((state: StoreType) => state.userSignUpReducer);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     return (
         <Container>
@@ -39,6 +41,7 @@ export function ClientSignUp() {
                     <Button onClick={() => {
                         dispatch(registerClient(window.btoa(login + ':' + password),
                                 {givenName, familyName, picLink}));
+                        history.push('/');
                     }}>
                         Create Client Profile
                     </Button>

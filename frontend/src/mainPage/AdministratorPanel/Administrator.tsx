@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
 import {Container, Row, Col, Button} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
+import {addCodes, loadCodes} from "./administratorSlice";
 import {Code} from "../CodeBlock/Code";
 import {StoreType} from "../../AppContainer/store";
 import "./Administrator.css";
-import {addCodes, loadCodes} from "./administratorSlice";
+
 
 export function Administrator() {
     const authData = useSelector( (state: StoreType) => state.authorisationReducer.authData);
@@ -19,10 +20,10 @@ export function Administrator() {
         <Container>
             <Row>
                 <Col>
-                    <h4>Issuer codes</h4>
+                    <h4>Issuer Codes</h4>
                 </Col>
                 <Col>
-                    <h4>Manager codes</h4>
+                    <h4>Manager Codes</h4>
                 </Col>
             </Row>
             <Row>

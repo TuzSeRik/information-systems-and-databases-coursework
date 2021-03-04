@@ -9,6 +9,7 @@ import {issuerSignUpReducer} from "../authorisationPage/IssuerSignUpBlock/issuer
 import {managerSignUpReducer} from "../authorisationPage/ManagerSignUpBlock/managerSignUpSlice";
 import {mainReducer} from "../mainPage/MainContainer/mainSlice";
 import {administratorReducer} from "../mainPage/AdministratorPanel/administratorSlice";
+import {managerReducer} from "../mainPage/ManagerPanel/managerSlice";
 
 const rootReducer = combineReducers({
     authorisationReducer,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
     issuerSignUpReducer,
     managerSignUpReducer,
     mainReducer,
-    administratorReducer
+    administratorReducer,
+    managerReducer
 });
 
 export const store = configureStore({reducer: rootReducer});

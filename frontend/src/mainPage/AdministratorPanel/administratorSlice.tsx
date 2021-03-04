@@ -32,8 +32,11 @@ export const loadCodes = (authData: string) => async (dispatch: Dispatch) => {
 };
 
 export const addCodes = (authData: string, type: string, number: number) => async (dispatch: Dispatch) => {
-    const response = await fetch('http://localhost:8080/api/codes?type=' + type + '&number=' + number, {
+    const response = await fetch('http://localhost:8080/api/codes', {
+        method: 'POST',
+        body: JSON.stringify({type, number}),
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': 'Basic ' + authData
         },
         credentials: "include"
