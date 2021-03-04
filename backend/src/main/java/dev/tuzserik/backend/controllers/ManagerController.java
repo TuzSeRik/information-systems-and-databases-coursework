@@ -40,7 +40,7 @@ public class ManagerController {
         User user = authorisationService.findUserByLogin(login);
         Contract contract = contractService.findOne(request.getId());
 
-        if (accessService.isManager(user) && contract.getManager().equals(user)) {
+        if (accessService.isManager(user)) {
             contractService.markContract(contract, request.getStatus());
 
             return new ResponseEntity<>(

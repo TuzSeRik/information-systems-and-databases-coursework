@@ -19,7 +19,7 @@ public class Contract {
     private User manager;
     @ManyToOne
     private Card card;
-    private ZonedDateTime creationDate;
-    private ZonedDateTime resolveDate;
+    private ZonedDateTime creationDate = ZonedDateTime.now();
+    private ZonedDateTime resolveDate = ZonedDateTime.now();
     private String status;
 }
