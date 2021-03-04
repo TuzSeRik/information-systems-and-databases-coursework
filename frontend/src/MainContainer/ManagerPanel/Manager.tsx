@@ -19,7 +19,7 @@ export function Manager() {
 
     useEffect(() => {
         dispatch(loadTransactions(authData));
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Container>

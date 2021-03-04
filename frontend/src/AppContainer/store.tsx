@@ -10,6 +10,11 @@ import {managerSignUpReducer} from "../AuthorisationContainer/SignUpPanel/Manage
 import {mainReducer} from "../MainContainer/mainSlice";
 import {administratorReducer} from "../MainContainer/AdministratorPanel/administratorSlice";
 import {managerReducer} from "../MainContainer/ManagerPanel/managerSlice";
+import {issuerReducer} from "../MainContainer/IssuerPanel/issuerSlice";
+import {cardAdderReducer} from "../MainContainer/IssuerPanel/CardAdderBlock/cardAdderSlice";
+import {cardArchetypeAdderReducer} from "../MainContainer/IssuerPanel/CardArchetypeAdderBlock/cardArchetypeAdderSlice";
+import {serviceAdderReducer} from "../MainContainer/IssuerPanel/ServiceAdderBlock/serviceAdderSlice";
+import {cardTransferrerReducer} from "../MainContainer/IssuerPanel/CardTransfererBlock/cardTransferrerSlice";
 
 const rootReducer = combineReducers({
     authorisationReducer,
@@ -21,7 +26,12 @@ const rootReducer = combineReducers({
     managerSignUpReducer,
     mainReducer,
     administratorReducer,
-    managerReducer
+    managerReducer,
+    issuerReducer,
+    cardArchetypeAdderReducer,
+    serviceAdderReducer,
+    cardAdderReducer,
+    cardTransferrerReducer
 });
 
 export const store = configureStore({reducer: rootReducer});
